@@ -1,0 +1,26 @@
+#fight, armed or unarmed, exhibition or tournament, winner, loser, {loser...}
+#for team matches,  members of a team are separated by &
+1, armed, exhibition, Darvish Ham, Skinscale
+2, armed, exhibition, Garth Gamblin, Wulfric Bjornhald
+3, armed, exhibition, Zerr Waters, Razzk
+4, armed, exhibition, Wilburn Castaldi, Durugin Thinbeard
+5, armed, exhibition, Sssythhh, Nasrin Nine-Claws
+6, armed, exhibition, Wilburn Castaldi, Garth Gamblin
+7, unarmed, exhibition, Vasssssily, Darvish Ham
+8, armed, exhibition, Arsaces, Nasrin Nine-Claws
+9, armed, exhibition, Giles Mayean, Desmond Frai
+10, armed, exhibition, Durugin Thinbeard, Redwood Sapstain
+11, armed, exhibition, Sssythhh, Zerr Waters
+12, armed, exhibition, Sssythhh, Wilburn Castaldi
+13, armed, exhibition, Arsaces, Vasssssily
+14, armed, exhibition, Redwood Sapstain, Desmond Frai
+15, armed, exhibition, Helga Henriksdottir, Enguerrand Morel
+16, armed, exhibition, Durugin Thinbeard, Sabbuk
+#17, armed, eightfold path, Garth Gamblin, Path Opponent
+#18, armed, eightfold path, Path Opponent, Giles Mayean
+19, armed, tournament, Arsaces, Giles Mayean
+20, armed, tournament, Enguerrand Morel, Carajan Iyamet
+21, armed, tournament, Runt, Durugin Thinbeard
+22, unarmed, tournament, Garth Gamblin, Gonzalo Gasperini
+23, armed, tournament, Helga Henriksdottir, Screech Bloodnose
+24, armed, tournament, Sssythhh & Wuming Yi, Wilburn Castaldi & Redwood Sapstain
