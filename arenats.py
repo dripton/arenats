@@ -45,10 +45,9 @@ class Ranker(object):
         if not line or line.startswith("#"):
             return
         parts = line.split(",")
-        assert len(parts) >= 4
-        # The first 3 parts are unused for now.
-        winners = [parts[3]]
-        losers = parts[4:]
+        assert len(parts) >= 2
+        winners = [parts[0]]
+        losers = parts[1:]
         winner_lists = explode(winners)
         loser_lists = explode(losers)
 
