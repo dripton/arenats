@@ -115,6 +115,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--house-filename", action="store", type=str)
     parser.add_argument("filename", action="store", type=str)
+    parser.add_argument("-d", "--debug", action="store_true")
     args = parser.parse_args()
     with open(args.filename) as fil:
         st = fil.read()
@@ -122,6 +123,9 @@ def main():
         with open(args.house_filename) as house_fil:
             house_st = house_fil.read()
         st = replace_name_with_house(st, house_st)
+        if args.debug:
+            print st
+            print
     lines = st.split("\n")
 
     ranker = Ranker(lines)
