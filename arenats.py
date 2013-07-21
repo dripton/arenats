@@ -6,8 +6,8 @@ __copyright__ = "Copyright 2013 David Ripton"
 __license__ = "MIT"
 
 
+import argparse
 from collections import defaultdict
-import sys
 
 import trueskill
 
@@ -95,15 +95,34 @@ class Ranker(object):
         print
 
 
+def replace_name_with_house(st, house_st):
+    """Replace each name in st with the corresponding house."""
+    player_to_house = {}
+    house_lines = house_st.strip().split("\n")
+    for house_line in house_lines:
+        parts = house_line.split(",")
+        house = parts[0].strip()
+        players = parts[1:]
+        for player in players:
+            player = player.strip()
+            player_to_house[player] = house
+    for player, house in player_to_house.iteritems():
+        st = st.replace(player, house)
+    return st
+
+
 def main():
-    if len(sys.argv) > 1:
-        fn = sys.argv[1]
-        fil = open(fn)
-    else:
-        fil = sys.stdin
-    bytes = fil.read()
-    fil.close()
-    lines = bytes.split("\n")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--house-filename", action="store", type=str)
+    parser.add_argument("filename", action="store", type=str)
+    args = parser.parse_args()
+    with open(args.filename) as fil:
+        st = fil.read()
+    if args.house_filename:
+        with open(args.house_filename) as house_fil:
+            house_st = house_fil.read()
+        st = replace_name_with_house(st, house_st)
+    lines = st.split("\n")
 
     ranker = Ranker(lines)
     ranker.process_all()
