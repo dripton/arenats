@@ -12,6 +12,7 @@ from collections import defaultdict
 import trueskill
 
 
+MIN_TS = 0
 SIGMA_MULTIPLIER = 3
 
 
@@ -84,7 +85,8 @@ class Ranker(object):
     def output(self):
         ratings = []
         for name, rating in self.ratings.iteritems():
-            ts = max(1, rating.mu - SIGMA_MULTIPLIER * rating.sigma)
+            ts = round(max(MIN_TS,
+                           rating.mu - SIGMA_MULTIPLIER * rating.sigma))
             ratings.append((ts, rating.mu, rating.sigma, name))
         ratings.sort(reverse=True)
 
