@@ -13,7 +13,7 @@ import trueskill
 
 
 MIN_TS = 0
-SIGMA_MULTIPLIER = 3
+SIGMA_MULTIPLIER = 2
 
 
 def explode(li):
